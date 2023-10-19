@@ -1,13 +1,21 @@
-from algo_functions.min_eating_speed import min_eating_speed
+from algo_functions.invert_binary_tree import BinaryTree, invert_binary_tree
+from algo_functions.print_binary_tree import print_binary_tree
 
-piles1 = [3, 6, 7, 11]
-H1 = 8
-print(min_eating_speed(piles1, H1))  # Результат: 4
+root = BinaryTree(1)
+root.left = BinaryTree(2)
+root.right = BinaryTree(3)
+root.left.left = BinaryTree(4)
+root.left.right = BinaryTree(5)
+root.right.left = BinaryTree(6)
+root.right.right = BinaryTree(7)
 
-piles2 = [30, 11, 23, 4, 20]
-H2 = 5
-print(min_eating_speed(piles2, H2))  # Результат: 30
 
-piles3 = [30, 11, 23, 4, 20]
-H3 = 6
-print(min_eating_speed(piles3, H3))  # Результат: 23
+print("Початкове дерево:")
+print_binary_tree(root)
+
+
+inverted_tree = invert_binary_tree(root)
+
+
+print("\nОбернене дерево:")
+print_binary_tree(inverted_tree)
