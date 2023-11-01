@@ -1,21 +1,12 @@
-from algo_functions.invert_binary_tree import BinaryTree, invert_binary_tree
-from algo_functions.print_binary_tree import print_binary_tree
+from algo_functions.find_shortest_path import find_shortest_path
 
-root = BinaryTree(1)
-root.left = BinaryTree(2)
-root.right = BinaryTree(3)
-root.left.left = BinaryTree(4)
-root.left.right = BinaryTree(5)
-root.right.left = BinaryTree(6)
-root.right.right = BinaryTree(7)
+with open("input.txt", "r") as input_file:
+    N = int(input_file.readline().strip())
+    src = tuple(map(int, input_file.readline().strip().split(',')))
+    dest = tuple(map(int, input_file.readline().strip().split(',')))
 
+result = find_shortest_path(N, src, dest)
+with open("output.txt", "w") as output_file:
+    output_file.write(str(result))
 
-print("Початкове дерево:")
-print_binary_tree(root)
-
-
-inverted_tree = invert_binary_tree(root)
-
-
-print("\nОбернене дерево:")
-print_binary_tree(inverted_tree)
+print("Найкоротший шлях:", result)
