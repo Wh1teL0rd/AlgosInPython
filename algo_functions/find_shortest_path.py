@@ -5,7 +5,12 @@ def is_valid(x, y, N):
     return 0 <= x < N and 0 <= y < N
 
 
-def find_shortest_path(N, src, dest):
+def find_shortest_path(input_file_name, output_file_name):
+    with open(input_file_name, "r") as input_file:
+        N = int(input_file.readline().strip())
+        src = tuple(map(int, input_file.readline().strip().split(',')))
+        dest = tuple(map(int, input_file.readline().strip().split(',')))
+
     row = [2, 2, -2, -2, 1, 1, -1, -1]
     col = [-1, 1, 1, -1, 2, -2, 2, -2]
 
@@ -20,7 +25,9 @@ def find_shortest_path(N, src, dest):
         x, y, dist = queue.popleft()
 
         if (x, y) == dest:
-            return dist
+            with open(output_file_name, "w") as output_file:
+                output_file.write(str(dist))
+            return
 
         for k in range(8):
             new_x, new_y = x + row[k], y + col[k]
@@ -28,4 +35,5 @@ def find_shortest_path(N, src, dest):
                 visited[new_x][new_y] = True
                 queue.append((new_x, new_y, dist + 1))
 
-    return -1
+    with open(output_file_name, "w") as output_file:
+        output_file.write("-1")
