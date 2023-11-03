@@ -1,18 +1,21 @@
-from algo_functions.biggest_kth_element_in_arr import biggest_kth_element_in_arr
-from algo_functions.squared_sorted_nums import squared_sorted_nums
+from algo_functions.invert_binary_tree import BinaryTree, invert_binary_tree
+from algo_functions.print_binary_tree import print_binary_tree
 
-print("--- Part 1 ---\n")
+root = BinaryTree(1)
+root.left = BinaryTree(2)
+root.right = BinaryTree(3)
+root.left.left = BinaryTree(4)
+root.left.right = BinaryTree(5)
+root.right.left = BinaryTree(6)
+root.right.right = BinaryTree(7)
 
-nums1 = [-4, -2, 0, 1, 3]
-result1 = squared_sorted_nums(nums1)
-print(result1)
 
-nums2 = [1, 2, 3, 4, 5]
-result2 = squared_sorted_nums(nums2)
-print(result2)
+print("Початкове дерево:")
+print_binary_tree(root)
 
-print("\n--- Part 2 ---\n")
 
-nums3 = [15, 7, 22, 9, 36, 2, 42, 18]
-result3, position = biggest_kth_element_in_arr(nums3, 3)
-print(f"k-тий найбільший елемент: {result3}, його позиція (індекс): {position}")
+inverted_tree = invert_binary_tree(root)
+
+
+print("\nОбернене дерево:")
+print_binary_tree(inverted_tree)
