@@ -19,10 +19,10 @@ def find_shortest_path(input_file_name, output_file_name):
     x, y = src
     visited[x][y] = True
 
-    queue = deque([(x, y, 0)])
+    queue = ([(x, y, 0)])
 
     while queue:
-        x, y, dist = queue.popleft()
+        x, y, dist = queue.pop(0)
 
         if (x, y) == dest:
             with open(output_file_name, "w") as output_file:
