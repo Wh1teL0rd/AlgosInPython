@@ -1,6 +1,6 @@
 import unittest
 
-from algo_functions.min_eating_speed import min_eating_speed
+from algo_functions.lab2.min_eating_speed import min_eating_speed
 
 
 class TestMinEatingSpeed(unittest.TestCase):

@@ -1,12 +1,14 @@
-from algo_functions.find_shortest_path import find_shortest_path
+from algo_functions.lab5.count_of_pairs import count_of_pairs
+from algo_functions.lab5.read_input import read_input
+from algo_functions.lab5.write_output import write_output
 
-with open("input.txt", "r") as input_file:
-    N = int(input_file.readline().strip())
-    src = tuple(map(int, input_file.readline().strip().split(',')))
-    dest = tuple(map(int, input_file.readline().strip().split(',')))
+# Зчитуємо вхідні дані з файлу
+input_filename = 'input.txt'
+N, pairs = read_input(input_filename)
 
-result = find_shortest_path(N, src, dest)
-with open("output.txt", "w") as output_file:
-    output_file.write(str(result))
+# Рахуємо кількість можливих пар
+result = count_of_pairs(pairs)
 
-print("Найкоротший шлях:", result)
+# Записуємо результат у файл
+output_filename = 'output.txt'
+write_output(output_filename, result)
