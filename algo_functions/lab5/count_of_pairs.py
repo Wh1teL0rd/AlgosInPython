@@ -1,14 +1,20 @@
 def count_of_pairs(pairs):
-    boy_set = set()
-    girl_set = set()
+    tribes = [set(pairs[0])]
+    count = 0
 
-    for pair in pairs:
-        boy, girl = pair
-        if boy % 2 == 1:
-            boy_set.add(boy)
-        if girl % 2 == 0:
-            girl_set.add(girl)
+    for pair in pairs[1:]:
+        for tribe in tribes:
+            if any(person in tribe for person in pair):
+                tribe.update(pair)
+                break
+            else:
+                tribes.append(set(pair))
 
-    possible_pairs = len(boy_set) * len(girl_set)
+    for i in range(len(tribes)):
+        for j in range(i+1, len(tribes)):
+            for first_person in tribes[i]:
+                for second_person in tribes[j]:
+                    if first_person % 2 != second_person % 2:
+                        count += 1
 
-    return possible_pairs
+    return count
