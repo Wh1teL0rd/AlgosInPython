@@ -1,7 +1,7 @@
 import unittest
 
-from algo_functions.are_trees_equal import are_trees_equal
-from algo_functions.invert_binary_tree import BinaryTree, invert_binary_tree
+from algo_functions.lab3.are_trees_equal import are_trees_equal
+from algo_functions.lab3.invert_binary_tree import BinaryTree, invert_binary_tree
 
 
 class TestInvertBinaryTree(unittest.TestCase):

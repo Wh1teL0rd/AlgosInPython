@@ -1,6 +1,6 @@
 import unittest
 
-from algo_functions.find_shortest_path import find_shortest_path
+from algo_functions.lab4.find_shortest_path import find_shortest_path
 
 
 class TestFindShortestPath(unittest.TestCase):
