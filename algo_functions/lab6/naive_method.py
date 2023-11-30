@@ -2,11 +2,10 @@ def naive_method(haystack, needle):
     comparisons = 0
     haystack_len = len(haystack)
     needle_len = len(needle)
+    last_index = -1
 
     if needle_len == 0:
-        return -1, comparisons
-
-    last_index = -1
+        return last_index, comparisons
 
     for i in range(haystack_len - needle_len + 1):
         j = 0
