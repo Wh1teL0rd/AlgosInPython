@@ -1,6 +1,6 @@
 import unittest
 
-from algo_functions.lab5.count_of_pairs import count_of_pairs
+from src.lab5.count_of_pairs import count_of_pairs
 
 
 class TestCountOfPairsFunction(unittest.TestCase):
