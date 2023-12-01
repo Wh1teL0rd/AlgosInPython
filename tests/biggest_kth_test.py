@@ -1,6 +1,6 @@
 import unittest
 
-from algo_functions.lab1.biggest_kth_element_in_arr import biggest_kth_element_in_arr
+from src.lab1.biggest_kth_element_in_arr import biggest_kth_element_in_arr
 
 
 class TestBiggestKthInArr(unittest.TestCase):

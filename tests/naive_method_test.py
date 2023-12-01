@@ -1,6 +1,6 @@
 import unittest
 
-from algo_functions.lab6.naive_method import naive_method
+from src.lab6.naive_method import naive_method
 
 
 class TestNaiveMethod(unittest.TestCase):

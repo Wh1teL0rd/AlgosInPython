@@ -1,7 +1,7 @@
-from algo_functions.lab6.naive_method import naive_method
+from src.lab6.naive_method import naive_method
 
-haystack = "abcdefghi"
-needle = "ghi"
+haystack = "THIS IS A TEST TEXT"
+needle = "TEST"
 result, comparisons = naive_method(haystack, needle)
 
 if result != -1:

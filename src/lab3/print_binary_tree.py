@@ -1,4 +1,4 @@
-from algo_functions.lab3.invert_binary_tree import BinaryTree
+from src.lab3.invert_binary_tree import BinaryTree
 
 
 def print_binary_tree(tree: BinaryTree, indent="", last=True):

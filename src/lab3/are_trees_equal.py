@@ -1,4 +1,4 @@
-from algo_functions.lab3.invert_binary_tree import BinaryTree
+from src.lab3.invert_binary_tree import BinaryTree
 
 
 def are_trees_equal(tree1: BinaryTree, tree2: BinaryTree) -> bool:
